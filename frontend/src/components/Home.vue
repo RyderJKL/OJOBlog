@@ -1,25 +1,10 @@
 <template>
-  <ul>
-    <li>
-      <router-link to="/home">Home</router-link>
-    </li>
-    <li>
-      <router-link to="/sign-in">SignIn
-      </router-link>
-    </li>
-    <li>
-      <router-link to="/sign-up">Sign-Up
-      </router-link>
-    </li>
-    <li>
-      <router-link to="/about">About</router-link>
-    </li>
-  </ul>
+  <p>it's home</p>
 </template>
 
 
 <script>
   export default{
-  	name: 'home',
+  	name: 'Home',
   }
 </script>

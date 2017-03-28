@@ -1,5 +1,5 @@
 <template>
-  <div class="form/sign-in-form">
+  <div class="form-sign-in-form">
     <div class="form-group">
       <div class="form-controller">
         <label for="userName">用户名:</label>
@@ -27,7 +27,7 @@
 <script>
   import api from '../api'
   export  default {
-  	name: 'singIn',
+  	name: 'SignIn',
     data() {
       return {
 
@@ -35,16 +35,14 @@
           userPassword: '',
       }
     },
-    method: {
+    methods: {
   		signIn () {
-  			const userSignInfo = {
-  				userName: this.userName,
+        const userSignInfo = {
+          userName: this.userName,
           userPassword: this.userPassword
-        }
+        };
 
-        api.getTopics().post(userSignInfo).then( (data)
-          =>
-        {console.log(data)})
+        this.$store.dispatch('signIn', userSignInfo)
       }
     }
   }

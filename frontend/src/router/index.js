@@ -9,9 +9,14 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: '/home',
+      name: 'Home',
       component: Home
+    },
+    {
+      path: '/sign-in',
+      name: 'SignIn',
+      component: (resolve) => require(['@/components/SignIn.vue'], resolve)
     }
   ]
 })

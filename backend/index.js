@@ -8,7 +8,7 @@ var routes = require('./routes');
 var pkg = require('./package');
 var winston = require('winston');
 var expressWinston = require('express-winston');
-
+let bodyParser = require('body-parser')
 var app = express();
 
 // 设置模板目录
@@ -18,6 +18,24 @@ app.set('view engine', 'ejs');
 
 // 设置静态文件目录
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(bodyParser.json({limit: '1mb'}));
+//body-parser 解析json格式数据
+app.use(bodyParser.urlencoded({
+  //此项必须在 bodyParser.json 下面,为参数编码
+    extended: true
+}));
+
+/*
+*
+* 如果客户端 post 的数据是这样的: {"data":{"name":"张三","age":25}}
+* 那么后端 express 通过 bodyParser 的解析后,可以这样读取到数据
+ * req.body.data.name (获取到张三)
+ * req.body.data.age (获取到年龄)
+ *
+ * 但是这里是有前提的,客户端请求接口时必须指名请求头类型 Content-Type=application/json
+* */
+
 // session 中间件
 app.use(session({
   name: config.session.key,// 设置 cookie 中保存 session id 的字段名称
@@ -68,24 +86,24 @@ app.use(expressWinston.logger({
 // 路由
 routes(app);
 // 错误请求的日志
-app.use(expressWinston.errorLogger({
-  transports: [
-    new winston.transports.Console({
-      json: true,
-      colorize: true
-    }),
-    new winston.transports.File({
-      filename: 'logs/error.log'
-    })
-  ]
-}));
+// app.use(expressWinston.errorLogger({
+//   transports: [
+//     new winston.transports.Console({
+//       json: true,
+//       colorize: true
+//     }),
+//     new winston.transports.File({
+//       filename: 'logs/error.log'
+//     })
+//   ]
+// }));
 
 // error page
-app.use(function (err, req, res, next) {
-  res.render('error', {
-    error: err
-  });
-});
+// app.use(function (err, req, res, next) {
+//   res.render('error', {
+//     error: err
+//   });
+// });
 
 if (module.parent) {
   module.exports = app;

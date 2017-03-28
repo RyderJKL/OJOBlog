@@ -10,7 +10,10 @@ import actions from  './actions'
 Vue.use(Vuex)
 
 const state = {
-
+  userInfo: {
+    userName: '',
+    userPassword: ''
+  }
 };
 
 export default new Vuex.Store({

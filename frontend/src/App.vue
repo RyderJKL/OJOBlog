@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <home></home>
+    <top-nav></top-nav>
+    <div class="view-box">
+      <router-view></router-view>
+    </div>
   </div>
-  <div class="view-box">
-    <router-view></router-view>
-  </div>
+
 </template>
 
 <script>
-  import Home from './components/Home.vue'
+  import Nav from './components/nav.vue'
+
 export default {
-  components: { 'home': Home },
+  components: { 'top-nav': Nav},
 }
 
 </script>
