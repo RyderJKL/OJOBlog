@@ -12,11 +12,10 @@ router.get('/', checkNotLogin, function(req, res, next) {
 
 // POST /signin 用户登录
 router.post('/', checkNotLogin, function(req, res, next) {
-    // res.json(JSON.stringify(data));
-    res.send({"status": "success", "data": req.body});
-  // var name = req.fields.name;
-  // var password = req.fields.password;
-
+    res.status(200).send({"status": "success", "data": req.body});
+  // var name = req.body.data.userName;
+  // var password = req.body.data.userPassword;
+  //
   // UserModel.getUserByName(name)
   //   .then(function (user) {
   //     if (!user) {
