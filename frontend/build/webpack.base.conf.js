@@ -37,6 +37,17 @@ module.exports = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
       },
+
+      // {
+      //   test: /\.vue$/,
+      //   loader: 'vue-loader',
+      //   options: {
+      //     loaders: {
+      //       scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+      //       sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+      //     }
+      //   }
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',

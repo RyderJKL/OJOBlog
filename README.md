@@ -3,7 +3,7 @@
 
 
 
-[OJOBlog](https://onejustone.github.io) 是我的一个前后端完全分离的项目，项目采用 Vue + Express + MongoDB 的 VENM 架构并运行在 Linux 服务器中，夸张点说这个项目是个全栈。
+[OJOBlog](https://onejustone.github.io) 是我的一个前后端完全分离的项目，项目采用 Vue + Express + MongoDB 的 VEM 架构并运行在 Linux 服务器中，夸张点说这个项目是个全栈。
 
 为什么搞出来两个系统?其实最开始在开发 OJOBlog 项目的时候是一边写 Vue，一边写后台，然后按照数据的流向来组织代码，一般是写完前端写然后又写后台，所以，一有 bug 的时候基本是调完前端调后台，调完后台调调前端，尝试这样搞了两个星期，人格分裂了，要崩溃，想杀人，想毁灭世界，想砸掉电脑，想回家种地，觉得上帝不公，人家天天玩游戏，为啥我要活得那么苦逼? 于是 `rm -rf /`，拔掉电源，跨上陈旧的黑色双肩包，一条深蓝色的牛仔裤，叫上女友出去踏浪了。。。一星期后，痛定思痛决定先用 Node + Express + MongoDB 写出一个后台来，简单的使用 ejs + bootstrap 进行页面渲染，并写出 RESTful 风格的 api 接口，于是有了 [NEMBLog](https://github.com/onejustone/NEMBlog)，尽管页面及其丑陋，但基本的功能都实现了，之后的这个项目 OJOBlog 的实在 NEMBlog 系统上的重构，去掉了 `views` 模块，即是视图层，并使用 Vue ，进行前端模块化，组件化，工具化的开发。
 

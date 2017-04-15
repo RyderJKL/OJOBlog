@@ -5,7 +5,7 @@ module.exports = function (app) {
       res.setHeader('Access-Control-Allow-Origin','http://localhost:8080')
       // 如果要发送带凭证的请求，必须要指定域名，
       res.setHeader('Access-Control-Allow-Headers', 'content-type');
-      res.setHeader('Access-Control-Allow-Methods','GET','POST','PUT','DELETE','OPTIONS')
+      // res.setHeader('Access-Control-Allow-Methods','GET','POST','PUT','DELETE','OPTIONS')
       res.setHeader('Access-Control-Allow-Credentials','true')
       next();
   });

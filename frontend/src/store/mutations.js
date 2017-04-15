@@ -21,7 +21,7 @@ Vue.http.headers.common["Content-Type"] = 'application/x-www-form-urlencoded；c
 *Vue.http.options.emulateJSON = true;
 * */
 
-let baseUrl = 'http://localhost:3000'
+let baseUrl = 'http://localhost:4010'
 
 export default {
   // 登陆
@@ -29,7 +29,7 @@ export default {
     "use strict";
     let data = JSON.stringify(info)
     Vue.http.post(baseUrl + '/signin',data).then(response => {
-      console.log(response.body)
+      console.log(response.body + 'are you sure??')
       state.userInfo.userName = 'chenrong'
       state.userInfo.userPassword = '124'
     })

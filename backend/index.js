@@ -8,7 +8,7 @@ var routes = require('./routes');
 var pkg = require('./package');
 var winston = require('winston');
 var expressWinston = require('express-winston');
-let bodyParser = require('body-parser')
+var bodyParser = require('body-parser')
 var app = express();
 
 // 设置模板目录

@@ -6,7 +6,7 @@ import VueResource from 'vue-resource'
 
 Vue.use(VueResource)
 
-const baseUrl = 'localhost:3000'
+const baseUrl = 'localhost:4010'
 
   export default {
     getTopics: (params) => { return Vue.resource(baseUrl).get(params)}

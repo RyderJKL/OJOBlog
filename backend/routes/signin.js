@@ -12,7 +12,7 @@ router.get('/', checkNotLogin, function(req, res, next) {
 
 // POST /signin 用户登录
 router.post('/', checkNotLogin, function(req, res, next) {
-    res.status(200).send({"status": "success", "data": req.body});
+    return res.status(200).send({"status": "success", "data": req.body});
   // var name = req.body.data.userName;
   // var password = req.body.data.userPassword;
   //
